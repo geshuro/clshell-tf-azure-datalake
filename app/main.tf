@@ -19,7 +19,7 @@ resource "azurerm_resource_group" "rg" {
   tags     = local.tags
 }
 
-resource "azurerm_databricks_workspace" "dbks" {
+/*resource "azurerm_databricks_workspace" "dbks" {
   name                        = "dbks${local.data_lake_name}"
   resource_group_name         = azurerm_resource_group.rg.name
   managed_resource_group_name = "rgdbks${local.data_lake_name}"
@@ -30,7 +30,7 @@ resource "azurerm_databricks_workspace" "dbks" {
 
 provider "databricks" {
   azure_workspace_resource_id = azurerm_databricks_workspace.dbks.id
-}
+}*/
 
 resource "azuread_application" "sp" {
   display_name = "app-${local.data_lake_name}"
